@@ -13,8 +13,8 @@ def enviar():
     nome = request.form["nome"]
     nota = request.form["nota"]
 
-
-    lista_ratings.append({"nome": nome, "nota": nota})
+    if nome != "" and nota != "":
+        lista_ratings.append({"nome": nome, "nota": nota})
 
     return redirect(url_for("ratings"))
 @app.route("/ratings")

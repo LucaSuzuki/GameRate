@@ -22,11 +22,14 @@
         </div>
         <div>
 
+            {% if ratings %}
                 {% for r in ratings %}
 
-                    <p>Jogo: {{ r.nome }}        |         Nota: {{ r.nota }}</p>
+                    <h2>Jogo: {{ r.nome }}        |         Nota: {{ r.nota }}</h2>
                 {% endfor %}
-
+            {% else %}
+                <p>Sem avaliações!</p>
+            {% endif %}
         </div>
     </article>
 

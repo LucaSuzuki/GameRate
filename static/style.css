@@ -23,6 +23,12 @@ p{
     display: block;
 }
 
+h2{
+    color: azure;
+    display: block;
+}
+
+
 ul {
   list-style-type: none;
   align-items: center;
