@@ -1,10 +1,11 @@
 from flask import Flask
 
+
 app = Flask(__name__)
 
-@app.route("/")
-def homepage():
-    return "<h1>Hello World!</h1>"
+from views import *
+
+
 
 if __name__ == "__main__":
     app.run()

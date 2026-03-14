@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameRate</title>
+
+    <link rel="stylesheet" href="../static/style.css" >
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><img src="../static/images/GamRAte.png" alt="GAMERATE" width="80px"/></li>
+            <li><a href="/"><h2>HOME</h2></a></li>
+            <li><a href="/ratings"><h2>AVALIAÇÕES</h2></a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <div class="flex-section">
+            <h1>RATING PAGE!!</h1>
+        </div>
+        <div>
+
+                {% for r in ratings %}
+
+                    <p>Jogo: {{ r.nome }}        |         Nota: {{ r.nota }}</p>
+                {% endfor %}
+
+        </div>
+    </article>
+
+</body>
+</html>
