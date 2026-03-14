@@ -64,3 +64,6 @@ Este projeto foi criado com o objetivo demonstrar conceitos de desenvolvimento w
 - Envio de dados via formulários
 - Manipulação de métodos GET e POST
 - Uso de templates com Jinja2
+
+## 📔Bibliotecas necessárias
+[Requirements](requirements.txt)
