@@ -52,7 +52,6 @@ O servidor armazena temporariamente as avaliações em uma lista e o usuário é
 
 ## 🚀 Melhorias futuras
 
-- Integração com banco de dados
 - Upload de imagens dos jogos
 - Sistema de edição e remoção de avaliações
 
