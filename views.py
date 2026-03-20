@@ -1,9 +1,8 @@
 from os import name
 
-from main import app
+from main import app, get_connection
 from flask import render_template, request, redirect, url_for
 
-lista_ratings = []
 @app.route("/")
 def homepage():
     return render_template("homepage.html")
@@ -13,11 +12,26 @@ def enviar():
     nome = request.form["nome"]
     nota = request.form["nota"]
 
-    if nome != "" and nota != "":
-        lista_ratings.append({"nome": nome, "nota": nota})
+    if nome.strip() and nota.strip():
+        conn = get_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "INSERT INTO ratings (nome, nota) VALUES (%s, %s)",
+            (nome, nota)
+        )
+
+        conn.commit()
+        conn.close()
 
     return redirect(url_for("ratings"))
 @app.route("/ratings")
 def ratings():
-    return render_template("ratingPage.html", ratings=lista_ratings)
+    conn = get_connection()
+    cursor = conn.cursor()
+    print(conn, cursor)
+    cursor.execute("SELECT nome, nota FROM ratings")
+    dados = cursor.fetchall()
 
+    conn.close()
+    return render_template("ratingPage.html", ratings=dados)

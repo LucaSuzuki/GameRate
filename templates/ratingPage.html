@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameRate</title>
+    <link rel="icon" href="../static/images/GamRAte.png">
+
 
     <link rel="stylesheet" href="../static/style.css" >
 </head>
@@ -25,7 +27,7 @@
             {% if ratings %}
                 {% for r in ratings %}
 
-                    <h2>Jogo: {{ r.nome }}        |         Nota: {{ r.nota }}</h2>
+                    <h2>Jogo: {{ r[0] }}        |         Nota: {{ r[1] }}</h2>
                 {% endfor %}
             {% else %}
                 <p>Sem avaliações!</p>
